@@ -1,0 +1,337 @@
+# 수집할 언론사 목록
+#
+# key        : 고유 이름 (영문, 바꾸면 새 언론사로 취급돼요)
+# name       : 화면에 보일 이름
+# feed_url   : RSS/Atom 주소
+# country    : 국가 코드 (KR, US, GB ...)
+# lang       : 기사 언어 (ko, en)
+# category   : 기본 카테고리 (general, politics, economy, society, world, tech, science, culture)
+# enabled    : false로 두면 수집하지 않아요
+# title_suffix : 제목 끝에 붙는 꼬리표를 지울 때 사용 (Google News 경유 피드용)
+#
+# 주소는 각 언론사가 공개한 RSS 기준이에요. 서버에서
+#   docker compose run --rm collector python -m app.cli check-sources
+# 를 실행하면 각 피드가 실제로 동작하는지 확인할 수 있어요.
+
+sources:
+  # ── 국내 ─────────────────────────────────────────────
+  - key: yonhap
+    name: 연합뉴스
+    feed_url: https://www.yna.co.kr/rss/news.xml
+    homepage: https://www.yna.co.kr
+    country: KR
+    lang: ko
+    category: general
+
+  - key: yonhap-politics
+    name: 연합뉴스 정치
+    feed_url: https://www.yna.co.kr/rss/politics.xml
+    homepage: https://www.yna.co.kr
+    country: KR
+    lang: ko
+    category: politics
+
+  - key: yonhap-economy
+    name: 연합뉴스 경제
+    feed_url: https://www.yna.co.kr/rss/economy.xml
+    homepage: https://www.yna.co.kr
+    country: KR
+    lang: ko
+    category: economy
+
+  - key: yonhap-world
+    name: 연합뉴스 국제
+    feed_url: https://www.yna.co.kr/rss/international.xml
+    homepage: https://www.yna.co.kr
+    country: KR
+    lang: ko
+    category: world
+
+  - key: chosun
+    name: 조선일보
+    feed_url: https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml
+    homepage: https://www.chosun.com
+    country: KR
+    lang: ko
+    category: general
+
+  - key: joongang
+    name: 중앙일보
+    feed_url: https://news.google.com/rss/search?q=site:joongang.co.kr+when:1d&hl=ko&gl=KR&ceid=KR:ko
+    homepage: https://www.joongang.co.kr
+    country: KR
+    lang: ko
+    category: general
+    title_suffix: " - 중앙일보"
+
+  - key: donga
+    name: 동아일보
+    feed_url: https://rss.donga.com/total.xml
+    homepage: https://www.donga.com
+    country: KR
+    lang: ko
+    category: general
+
+  - key: hani
+    name: 한겨레
+    feed_url: https://www.hani.co.kr/rss/
+    homepage: https://www.hani.co.kr
+    country: KR
+    lang: ko
+    category: general
+
+  - key: khan
+    name: 경향신문
+    feed_url: https://www.khan.co.kr/rss/rssdata/total_news.xml
+    homepage: https://www.khan.co.kr
+    country: KR
+    lang: ko
+    category: general
+
+  - key: hankyung
+    name: 한국경제
+    feed_url: https://www.hankyung.com/feed/all-news
+    homepage: https://www.hankyung.com
+    country: KR
+    lang: ko
+    category: economy
+
+  - key: mk
+    name: 매일경제
+    feed_url: https://www.mk.co.kr/rss/30000001/
+    homepage: https://www.mk.co.kr
+    country: KR
+    lang: ko
+    category: economy
+
+
+
+  - key: etnews
+    name: 전자신문
+    feed_url: https://rss.etnews.com/Section901.xml
+    homepage: https://www.etnews.com
+    country: KR
+    lang: ko
+    category: tech
+
+  - key: zdnet-korea
+    name: 지디넷코리아
+    feed_url: https://news.google.com/rss/search?q=site:zdnet.co.kr+when:1d&hl=ko&gl=KR&ceid=KR:ko
+    homepage: https://zdnet.co.kr
+    country: KR
+    lang: ko
+    category: tech
+    title_suffix: " - 지디넷코리아"
+
+  - key: dongascience
+    name: 동아사이언스
+    feed_url: https://news.google.com/rss/search?q=site:dongascience.com+when:1d&hl=ko&gl=KR&ceid=KR:ko
+    homepage: https://www.dongascience.com
+    country: KR
+    lang: ko
+    category: science
+    title_suffix: " - 동아사이언스"
+
+  # ── 해외 ─────────────────────────────────────────────
+  - key: reuters
+    name: Reuters
+    feed_url: https://news.google.com/rss/search?q=site:reuters.com+when:1d&hl=en-US&gl=US&ceid=US:en
+    homepage: https://www.reuters.com
+    country: GB
+    lang: en
+    category: world
+    title_suffix: " - Reuters"
+
+  - key: ap
+    name: AP News
+    feed_url: https://news.google.com/rss/search?q=site:apnews.com+when:1d&hl=en-US&gl=US&ceid=US:en
+    homepage: https://apnews.com
+    country: US
+    lang: en
+    category: world
+    title_suffix: " - AP News"
+
+  - key: bbc-world
+    name: BBC News
+    feed_url: https://feeds.bbci.co.uk/news/world/rss.xml
+    homepage: https://www.bbc.com/news
+    country: GB
+    lang: en
+    category: world
+
+  - key: bbc-business
+    name: BBC Business
+    feed_url: https://feeds.bbci.co.uk/news/business/rss.xml
+    homepage: https://www.bbc.com/news/business
+    country: GB
+    lang: en
+    category: economy
+
+  - key: bbc-tech
+    name: BBC Technology
+    feed_url: https://feeds.bbci.co.uk/news/technology/rss.xml
+    homepage: https://www.bbc.com/news/technology
+    country: GB
+    lang: en
+    category: tech
+
+  - key: nyt-world
+    name: The New York Times
+    feed_url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    homepage: https://www.nytimes.com
+    country: US
+    lang: en
+    category: world
+
+  - key: nyt-business
+    name: NYT Business
+    feed_url: https://rss.nytimes.com/services/xml/rss/nyt/Business.xml
+    homepage: https://www.nytimes.com/section/business
+    country: US
+    lang: en
+    category: economy
+
+  - key: nyt-tech
+    name: NYT Technology
+    feed_url: https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml
+    homepage: https://www.nytimes.com/section/technology
+    country: US
+    lang: en
+    category: tech
+
+  - key: guardian-world
+    name: The Guardian
+    feed_url: https://www.theguardian.com/world/rss
+    homepage: https://www.theguardian.com
+    country: GB
+    lang: en
+    category: world
+
+  - key: guardian-business
+    name: The Guardian Business
+    feed_url: https://www.theguardian.com/uk/business/rss
+    homepage: https://www.theguardian.com/uk/business
+    country: GB
+    lang: en
+    category: economy
+
+  - key: wsj-world
+    name: The Wall Street Journal
+    feed_url: https://feeds.a.dj.com/rss/RSSWorldNews.xml
+    homepage: https://www.wsj.com
+    country: US
+    lang: en
+    category: world
+
+  - key: ft-world
+    name: Financial Times
+    feed_url: https://www.ft.com/world?format=rss
+    homepage: https://www.ft.com
+    country: GB
+    lang: en
+    category: world
+
+  - key: economist
+    name: The Economist
+    feed_url: https://www.economist.com/international/rss.xml
+    homepage: https://www.economist.com
+    country: GB
+    lang: en
+    category: world
+
+  - key: bloomberg
+    name: Bloomberg Markets
+    feed_url: https://feeds.bloomberg.com/markets/news.rss
+    homepage: https://www.bloomberg.com
+    country: US
+    lang: en
+    category: economy
+
+  - key: axios
+    name: Axios
+    feed_url: https://api.axios.com/feed/
+    homepage: https://www.axios.com
+    country: US
+    lang: en
+    category: general
+
+  - key: npr-world
+    name: NPR
+    feed_url: https://feeds.npr.org/1004/rss.xml
+    homepage: https://www.npr.org
+    country: US
+    lang: en
+    category: world
+
+  - key: aljazeera
+    name: Al Jazeera
+    feed_url: https://www.aljazeera.com/xml/rss/all.xml
+    homepage: https://www.aljazeera.com
+    country: QA
+    lang: en
+    category: world
+
+  - key: dw
+    name: DW
+    feed_url: https://rss.dw.com/rdf/rss-en-world
+    homepage: https://www.dw.com
+    country: DE
+    lang: en
+    category: world
+
+  - key: france24
+    name: France 24
+    feed_url: https://www.france24.com/en/rss
+    homepage: https://www.france24.com/en
+    country: FR
+    lang: en
+    category: world
+
+  - key: nikkei-asia
+    name: Nikkei Asia
+    feed_url: https://asia.nikkei.com/rss/feed/nar
+    homepage: https://asia.nikkei.com
+    country: JP
+    lang: en
+    category: world
+
+  # ── 해외 IT·과학 ─────────────────────────────────────
+  - key: the-verge
+    name: The Verge
+    feed_url: https://www.theverge.com/rss/index.xml
+    homepage: https://www.theverge.com
+    country: US
+    lang: en
+    category: tech
+
+  - key: wired
+    name: Wired
+    feed_url: https://www.wired.com/feed/rss
+    homepage: https://www.wired.com
+    country: US
+    lang: en
+    category: tech
+
+  - key: mit-tech-review
+    name: MIT Technology Review
+    feed_url: https://www.technologyreview.com/feed/
+    homepage: https://www.technologyreview.com
+    country: US
+    lang: en
+    category: tech
+
+  - key: nature
+    name: Nature
+    feed_url: https://www.nature.com/nature.rss
+    homepage: https://www.nature.com
+    country: GB
+    lang: en
+    category: science
+
+  - key: stat-news
+    name: STAT News
+    feed_url: https://www.statnews.com/feed/
+    homepage: https://www.statnews.com
+    country: US
+    lang: en
+    category: science

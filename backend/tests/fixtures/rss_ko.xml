@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+  <title>테스트 뉴스</title>
+  <item>
+    <title><![CDATA[정부, 내년 예산안 발표]]></title>
+    <link>https://news.example.kr/article/1?utm_source=rss&amp;id=1</link>
+    <guid>news-1</guid>
+    <description><![CDATA[<p>정부가 <b>내년 예산안</b>을 발표했다.</p><script>x()</script>]]></description>
+    <pubDate>Mon, 12 Oct 2026 01:00:00 +0900</pubDate>
+    <media:content url="https://img.example.kr/1.jpg" medium="image"/>
+  </item>
+  <item>
+    <title>반도체 수출 증가</title>
+    <link>https://news.example.kr/article/2#comments</link>
+    <description>반도체 수출 증가</description>
+    <pubDate>Mon, 12 Oct 2026 02:00:00 +0900</pubDate>
+  </item>
+  <item>
+    <title>링크 없는 기사</title>
+  </item>
+</channel>
+</rss>

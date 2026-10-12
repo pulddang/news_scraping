@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Example World</title>
+  <entry>
+    <title>Central bank raises rates - Example Wire</title>
+    <link href="https://world.example.com/2026/10/rates"/>
+    <id>tag:example.com,2026:rates</id>
+    <updated>2026-10-11T22:00:00Z</updated>
+    <summary type="html">The central bank &lt;em&gt;unexpectedly&lt;/em&gt; raised rates.</summary>
+    <author><name>Jane Doe</name></author>
+  </entry>
+  <entry>
+    <title>Time traveller story - Example Wire</title>
+    <link href="https://world.example.com/2099/future"/>
+    <updated>2099-01-01T00:00:00Z</updated>
+  </entry>
+</feed>
