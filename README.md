@@ -24,7 +24,7 @@ docker-compose.yml PostgreSQL + 수집기
 
 ## 서버에서 실행하기 (Oracle Cloud)
 
-Ubuntu 서버에 Docker가 설치되어 있다고 가정해요.
+처음이라면 [Oracle 서버 만들기 안내](docs/oracle-setup.md)를 먼저 따라 해주세요. 아래는 Docker가 설치된 Ubuntu 서버 기준 요약이에요.
 
 ```bash
 git clone https://github.com/pulddang/news_scraping.git
